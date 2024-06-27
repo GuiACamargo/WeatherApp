@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-numbers: 'Bungee', sans-serif;
+    --font-text: 'Montserrat', sans-serif;
+    
+    /* Colors */
+    --white: #e6e6e6;
+    
+    /* Input */
+    --input-height: 26px;
+    --input-background: rgba(255, 255, 255, 0.15);
+    --input-border: 2px solid rgba(212, 212, 212, 0.45);
+    --input-border-radius: 10px;
+    --input-padding: 8px;
+    --input-button-height: calc(var(--input-height) + 20px);
+}
+
+body {
+    background: url(../public/images/background.svg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-text);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.snackbar {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(153, 51, 190, 0.75);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transform: translateX(150%);
+    z-index: 1000;
+    transition: 0.6s;
+}
+
+.snackbar-close {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.loader {
+    height: 275px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.snackbar-animate {
+    transform: translateX(0px);
+}
+
+.snackbar-close:hover {
+    scale: 1.1;
+}
+
+.card {
+    width: 500px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    /* background-color: #d2caef3d; */
+    /* background-color: #8d1cd85b; */
+    /* background-color: #9691f04f; */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-image: linear-gradient(
+        to right top, 
+        rgba(73, 31, 124, 0.4), 
+        rgba(92, 37, 141, 0.4), 
+        rgba(111, 42, 157, 0.4), 
+        rgba(132, 47, 174, 0.4), 
+        rgba(153, 51, 190, 0.4));
+    padding: 40px;
+    gap: 40px;
+}
+
+.input-container {
+    display: flex;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-input {
+    height: var(--input-height);
+    background-color: var(--input-background);
+    border: var(--input-border);
+    padding: var(--input-padding);
+    padding-left: 15px;
+    border-right: none;
+    border-radius: var(--input-border-radius) 0px 0px var(--input-border-radius);
+    font-size: 16px;
+    color: var(--white);
+    font-family: var(--font-text);
+    width: 100%;
+    transition: 0.3s;
+}
+
+.location-input::placeholder {
+    color: var(--white);
+    font-family: var(--font-text);
+    opacity: 0.6;
+}
+
+.location-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.location-input:focus + .location-button {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.location-button {
+    height: var(--input-button-height);
+    background-color: var(--input-background);
+    border: var(--input-border);
+    border-left: none;
+    display: flex;
+    padding: 0px 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px var(--input-border-radius) var(--input-border-radius) 0px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.location-button:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25)
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-info-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-img {
+    display: none;
+    height: 275px;
+    margin-bottom: 20px;
+}
+
+.weather-temp {
+    font-family: var(--font-numbers);
+    font-size: 72px;
+    color: white;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.weather-desc {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+.weather-location {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 8px;
+}
+
+.bottom-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 80%;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.humidity-wrapper, .windspeed-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.humidity-img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.wind-speed-img {
+    width: 55px;
+    margin-right: 18px;
+}
+
+.bottom-value {
+    font-family: var(--font-text);
+    font-size: 32px;
+}
+
+.bottom-title {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}

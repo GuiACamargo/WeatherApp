@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style/reset.css"></link>
+        <link rel="stylesheet" href="style/styles.css">
+        <script src="js/script.js" type="module" defer></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/grid.js"></script>
+        <link rel="icon" href="public/images/favicon.svg" type="image/x-icon">
+    </head>
+    <body>
+        <!-- ICONS FROM: 
+            https://www.figma.com/design/gIi850SwO0UzvlSreJwipJ/Weather-Icons---Community-(Community)?node-id=402-6&t=nECd7JxbCqpOqIYu-0 
+            https://www.figma.com/community/file/1283826005232351466/frosted-glass-weather-icons-glass-morphism?searchSessionId=lxnw629i-k2axmqbba5
+            https://www.svgrepo.com/
+        -->
+        <div class="snackbar">
+            <span class="snackbar-text"></span>
+            <button class="snackbar-close">
+                <img src="public/images/close.svg" alt="Close Icon">
+            </button>
+        </div>
+        <section class="card">
+            <div class="input-container">
+                <input type="text" class="location-input" placeholder="Enter a location here">
+                <button class="location-button">
+                    <img src="public/images/search.svg" alt="Search Icon">
+                </button>
+            </div>
+            <div class="bottom-container">
+                <div class="top-info-wrapper">
+                    <div class="loader">
+                        <l-grid
+                            size="90"
+                            speed="1.5"
+                            color="#E7B3FF" 
+                        ></l-grid>
+                    </div>
+                    <img src="public/images/weather-conditions/clear.png" alt="Weather Condition" class="weather-img">
+                    <h2 class="weather-temp"></h2>
+                    <span class="weather-desc"></span>
+                    <span class="weather-location"></span>
+                </div>
+                <div class="bottom-info-wrapper">
+                    <div class="humidity-wrapper">
+                        <img class="humidity-img" src="public/images/weather-info/humidity.png" alt="Humidity Icon">
+                        <div class="bottom-text-wrapper">
+                            <span class="bottom-value humidity-value">-</span>
+                            <h3 class="bottom-title">Humidity</h3>
+                        </div>
+                    </div>
+                    <div class="windspeed-wrapper">
+                        <img class="wind-speed-img" src="public/images/weather-info/wind-speed.png" alt="Humidity Icon">
+                        <div class="bottom-text-wrapper">
+                            <span class="bottom-value wind-speed-value">-</span>
+                            <h3 class="bottom-title">Wind Speed</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
