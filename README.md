@@ -21,10 +21,10 @@ Clone este repositório para o seu ambiente local usando o seguinte comando:
 git clone https://github.com/GuiACamargo/WeatherApp.git
 ```
 
-###Passo 2: Abrir o Projeto no VS Code
+### Passo 2: Abrir o Projeto no VS Code
 Abra o diretório do projeto no Visual Studio Code (VS Code).
 
-###Passo 3: Utilizar a Extensão Live Server
+### Passo 3: Utilizar a Extensão Live Server
 Para rodar o projeto localmente, você pode usar a extensão Live Server do VS Code. Siga os passos abaixo:
 
 Instale a extensão Live Server. Para isso, vá até a aba de extensões no VS Code (ícone de quadrado com quatro quadradinhos menores no sidebar esquerdo) e procure por "Live Server". Clique em "Instalar".
